@@ -1,0 +1,10 @@
+<h1>Activities page</h1>
+
+<% @activities.each do |activity| %>
+  <%= activity.name %>
+  <%= activity.location %>
+  <%= activity.date %>
+  <%= activity.time %>
+  <%= activity.description %>
+  <%= activity.price %>
+<% end %>
