@@ -1,0 +1,63 @@
+.button {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #FF7000;
+  transition: background 0.4s center;
+  width: fit-content;
+
+  &:hover{
+    background: #003DE5;
+    color: white;
+    font-weight: bolder ;
+  }
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.card-grid{
+  display: grid;
+  grid-column: 2/4;
+  border-radius: 5px;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 16px;
+}
+
+.card{
+  border-radius: 5px;
+}
+
+.search{
+border-radius: 50%;
+}
+
+
+
+.search{
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+
+  .search-bar{
+    border-radius: 50px;
+  }
+
+  .search-btn{
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background: #FF7000;
+    transition: background 0.4s center;
+    border: none;
+
+    &:hover{
+      background: #003DE5;
+      color: white;
+      font-weight: bolder ;
+    }
+  }
+}
