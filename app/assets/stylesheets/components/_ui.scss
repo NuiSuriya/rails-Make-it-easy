@@ -28,3 +28,36 @@
 .card{
   border-radius: 5px;
 }
+
+.search{
+border-radius: 50%;
+}
+
+
+
+.search{
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+
+  .search-bar{
+    border-radius: 50px;
+  }
+
+  .search-btn{
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background: #FF7000;
+    transition: background 0.4s center;
+    border: none;
+
+    &:hover{
+      background: #003DE5;
+      color: white;
+      font-weight: bolder ;
+    }
+  }
+}
