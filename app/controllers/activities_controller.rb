@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+
   def index
     @activities = Activity.all
 
@@ -22,6 +23,11 @@ class ActivitiesController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {activity: activity}),
         image_url: helpers.asset_url("logo.png")
       }
+
+    if params[:query].present?
+      @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @activities = Activity.all
     end
   end
 end
