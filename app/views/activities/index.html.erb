@@ -1,14 +1,5 @@
 <h1>Activities page</h1>
 
-<% @activities.each do |activity| %>
-  <%= activity.name %>
-  <%= activity.location %>
-  <%= activity.date %>
-  <%= activity.time %>
-  <%= activity.description %>
-  <%= activity.price %>
-  <%= link_to "show page", activity_path(activity) %>
-<% end %>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -27,10 +18,10 @@
             placeholder: "Find an activity..."
           %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>  
+        <% end %>
       </div>
     </div>
-      <div style="width: 300px; height: 300px;"
+      <div class="col-sm-4"style="width: 300px; height: 300px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
