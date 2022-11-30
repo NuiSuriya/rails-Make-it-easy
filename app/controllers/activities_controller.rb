@@ -2,8 +2,11 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @activities = Activity.all
-
+    if params[:query].present?
+      @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
@@ -24,11 +27,7 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url("logo.png")
       }
     end
-    if params[:query].present?
-      @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
-    else
-      @activities = Activity.all
-    end
+
   end
 
 end
