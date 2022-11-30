@@ -1,13 +1,17 @@
+$orange: #FF7000;
+$blue: #003DE5;
+
 .button {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #FF7000;
+  background: $orange;
   transition: background 0.4s center;
   width: fit-content;
+  text-decoration: none;
 
   &:hover{
-    background: #003DE5;
+    background: $blue;
     color: white;
     font-weight: bolder ;
   }

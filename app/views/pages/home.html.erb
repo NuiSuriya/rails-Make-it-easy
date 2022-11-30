@@ -1,14 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-background">
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div class="banner w-50">
 
+        <p>Sparkle your journey ...</p>
+        <h3 class="ms-4">Let's</h3>
 
-<%= link_to "Activities", activities_path %>
+        <div class="logo-img">
+          <%= image_tag "Make-it-easy_logo.png", class: "w-100" %>
+        </div>
+        <div>
+          <h3>Search</h3>
+        </div>
+        <div>
+          <%= link_to "See what I can do!", activities_path, class:"button" %>
+        </div>
+      </div>
 
-<%= form_with url: activities_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an activity"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+      <img src="https://img.okezone.com/content/2020/06/20/406/2233561/4-tips-menyenangkan-yang-harus-kamu-lakukan-saat-travelling-8yZWnYCT8L.jpg" class="w-50 m-0" style="object-fit: cover;">
+    </div>
+  </div>
+</div>
