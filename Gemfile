@@ -79,3 +79,6 @@ group :test do
 end
 
 gem "devise"
+
+#use map for show page
+gem "geocoder"

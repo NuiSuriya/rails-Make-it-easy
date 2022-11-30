@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  resources :activities, only: [:index, :show]
   get '/ui', to: 'pages#uikit'
-  resources :activities, only: [:index]
-
 end
