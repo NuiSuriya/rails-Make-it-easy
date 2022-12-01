@@ -31,4 +31,24 @@ class ActivitiesController < ApplicationController
 
   end
 
+  def new
+    @activity = Activity.new
+  end
+
+  def create
+    @activity = Activity.new(activity_param)
+    @activity.user = current_user
+
+    if @activity.save
+      redirect_to activity_path(@activity)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def activity_param
+    params.require(:activity).permit(:name, :location, :date, :time, :price)
+  end
 end
