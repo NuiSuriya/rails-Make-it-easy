@@ -35,8 +35,8 @@ Activity.create!(
   location: 'Vondelpark 5, 1071 AA Amsterdam',
   description: 'Amazing Event. The MUST thing to do.',
   date: Date.today,
-  time: Time.now,
-  price: 10
+  time: Time.now + (3600*5),
+  price: 0
 )
 
 Activity.create!(

@@ -12,9 +12,11 @@
           <div class="card-description">
             <h5 class="card-title text-capitalize"> <%= @activity.name%></h5>
             <h6 class="card-title text-capitalize"> <%= @activity.location%></h6>
-            <h6 class="card-title text-capitalize"> <%= @activity.location%></h6> #date and time
+            <h6 class="card-title text-capitalize"> <%= @activity.date%></h6>
+            <h6 class="card-title text-capitalize"> <%= @activity.time.strftime("%H:00")%></h6>
             <p class="card-text"><%= @activity.description %></p>
-
+            <%= link_to "Back to activities", activities_path %>
+            
 <div class="container">
   <div class="card-form p-3">
     <%= simple_form_for [@activity, @booking] do |f|%>
@@ -38,10 +40,9 @@
     </div>
 </div>
 
-
           </div>
           <div class="card-price">
-            <h5 class="card-title text-capitalize">5$</h5>
+            <h4 class="card-title text-capitalize"><%= "#{@activity.price} €" %></h4>
           </div>
         </div>
       </div>
@@ -57,4 +58,3 @@
   </div>
 
 </div>
-``
