@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :activities, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create]
-    resources :reviews, only: :create
+    resources :bookings, only: [:new, :create, :show]
   end
 
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :show] do
+    resources :reviews, only: :create
+  end
 
   get '/ui', to: 'pages#uikit'
 end

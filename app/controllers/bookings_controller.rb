@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
   before_action :set_activity, only: %i[new create]
+
+  def show
+    @booking = Booking.find(params[:id])
+    @review = Review.new  # Added this line
+  end
+
   def new
     @booking = Booking.new
     @booking.activity = @activity
