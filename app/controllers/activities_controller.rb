@@ -16,6 +16,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+
     @marker = [@activity].map do |activity|
       {
         lat: activity.latitude,
