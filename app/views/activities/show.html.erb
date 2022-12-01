@@ -7,4 +7,12 @@
 </div>
 
 
+<%= simple_form_for([@activity, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Back to activities",
+activities_path %>
+
 <%= link_to "Book now!", new_activity_booking_path(@activity), class:"button"  %>
