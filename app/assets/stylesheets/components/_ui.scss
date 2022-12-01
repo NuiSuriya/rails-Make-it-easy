@@ -9,6 +9,10 @@ $blue: #003DE5;
   transition: background 0.4s center;
   width: fit-content;
   text-decoration: none;
+  border: none;
+  border-color: white;
+  margin-left: 3px;
+  font-weight: bolder ;
 
   &:hover{
     background: $blue;
@@ -57,6 +61,8 @@ border-radius: 50%;
     background: #FF7000;
     transition: background 0.4s center;
     border: none;
+    border-color: white;
+
 
     &:hover{
       background: #003DE5;

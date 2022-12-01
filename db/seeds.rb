@@ -4,8 +4,7 @@ require "yaml"
 # Clear the database
 # create 3 @users
 # Create the categories
-
-#Create the activities and assign a random category/user
+# Create the activities and assign a random category/user
 
 puts "Clearing db..."
 User.destroy_all
