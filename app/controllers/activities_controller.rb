@@ -19,7 +19,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-
+    @booking = Booking.new
     @review = Review.new  # Added this line
     @marker = [@activity].map do |activity|
       {
@@ -29,7 +29,6 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url("logo.png")
       }
     end
-
   end
 
   def new
