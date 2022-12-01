@@ -1,0 +1,12 @@
+<div class= "container">
+  <div class="">
+    <%= simple_form_for([@booking, @review]) do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :rating %>
+      <%= f.button :submit, placeholder: "Leave your review" %>
+    <% end %>
+
+    <%# <%= link_to "Done", new_review_booking_path(@booking), class:"button"  %>
+
+  </div>
+</div>
