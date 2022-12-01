@@ -10,10 +10,14 @@
           <%= image_tag "Make-it-easy_logo.png", class: "w-100" %>
         </div>
         <div>
-          <h3>Search</h3>
-        </div>
-        <div>
-          <%= link_to "See what I can do!", activities_path, class:"button" %>
+          <%= form_with url: activities_path, method: :get, class: "d-grid gap-2 col-sm-8" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find an activity..."
+          %>
+          <%= submit_tag "See what I can do!", class: "button" %>
+          <% end %>
         </div>
       </div>
 

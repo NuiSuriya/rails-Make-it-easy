@@ -1,18 +1,16 @@
 <div class="container">
-  <div class="form">
-    <div>
-      <%= form_with url: activities_path, method: :get, class: "d-grid gap-2 col-sm-10" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an activity..."
-        %>
-    </div>
-    <div>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    </div>
-      <% end %>
 
+   <div class="row justify-content-center barr-search">
+    <div class="d-flex justify-content-end align-items-start mb-3">
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Looking for something else?"
+        %>
+        <%= submit_tag "Search", class: "button" %>
+      <% end %>
+    </div>
   <div class="small-card row">
     <div class="card-grid col-sm-8">
       <% @activities.each do |activity| %>
@@ -33,7 +31,7 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-    </div>
+    </div>      
   </div>
 
 </div>
