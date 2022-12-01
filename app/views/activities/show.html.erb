@@ -5,3 +5,11 @@
   data-map-markers-value="<%= @marker.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
+<%= simple_form_for([@activity, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Back to activities",
+activities_path %>
