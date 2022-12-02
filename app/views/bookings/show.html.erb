@@ -1,3 +1,16 @@
+<div class="container">
+  <div class="card confirm-card">
+    <h1>You've make it!</h1>
+    <h2>Enjoy "<strong><%= @booking.activity.name %></strong>"!</h2>
+
+    <h2>Your booking is here:</h2>
+
+      <%= image_tag "QR_CODE.jpg" , class: "position-absolute"%>
+
+   </div>
+</div>
+
+
 <div class= "container">
   <div class="">
     <%= simple_form_for([@booking, @review]) do |f| %>
