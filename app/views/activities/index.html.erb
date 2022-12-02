@@ -16,7 +16,12 @@
       <% @activities.each do |activity| %>
         <div class="card flex-grow-1">
           <div class="card-body">
+          <% if activity.image_url %>
+             <img src="<%= activity.image_url %>" class="card-img-top" alt="...">
+            <% else %>
             <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="...">
+          <% end %>
+
             <h6 class="card-title text-capitalize"><%= activity.name.capitalize %></h6>
             <p class="card-title text-capitalize"> <%= activity.location.split.last %> </p>
             <p class="button"><%= link_to "Look it", activity_path(activity) %></p>
