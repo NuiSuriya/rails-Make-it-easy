@@ -63,14 +63,15 @@
         </div>
       </div>
       <div class="d-flex">
-        <%= f.input :date, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
-        <%= f.input :time, label: false,
+        <%= f.date_select :date, ignore_time: true, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
+        <%# <%= f.input :time, label: false,
         collection: ["10","11","12","13","14","15","16","17","18","19","20"],
         prompt: "hr", input_html: {class: "box"} %>
-        <p class="time">:</p>
+        <%# <p class="time">:</p>
         <%= f.input :time, label: false, collection: ["00","15","30","45"],
           prompt: "min", input_html: {class: "box"}%>
-      </div>
+      <%# </div> %>
+      <%= f.time_select :date, ignore_date: true, html5: true %>
       <%= f.submit "Book now!", class: "button" %>
     <% end %>
     </div>
