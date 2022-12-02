@@ -46,7 +46,7 @@ Activity.create!(
   name: '29. Explore Java Island',
   user: User.all.sample,
   category: hidden_gems,
-  location: "1019 RX Ámsterdam",
+  location: "1019 RX Amsterdam",
   description: 'Amazing Event. The MUST thing to do.',
   date: Date.today,
   time: Time.now + (3600*5),
@@ -54,7 +54,7 @@ Activity.create!(
 )
 
 Activity.create!(
-  image_url: "https://www.kijkopnoord-holland.nl/wp-content/uploads/2022/04/tropenmuseum.jpg",
+  image_url: "https://www.tropenmuseum.nl/sites/default/files/styles/teaser_/public/Ontwerper%20Jie%20Chen%20in%20het%20depot%20van%20het%20Tropenmuseum%20in%20Amsterdam.%C2%A0Foto%20Tropenmuseum.webp?itok=W9uhNdm7",
   name: 'Plastic Crush',
   user: User.all.sample,
   category: art_and_museums,
@@ -130,7 +130,7 @@ Activity.create!(
   name: 'Catch the free ferry to Amsterdam Noord',
   user: User.all.sample,
   category: food_and_drinks,
-  location: "1011 AB Ámsterdam",
+  location: "1011 AB Amsterdam",
   description: 'Amazing Event. The MUST thing to do.',
   date: Date.today,
   time: Time.now + (3600*5),
