@@ -1,23 +1,37 @@
-<div class="container">
-  <div class="card confirm-card">
-    <h1>You've make it!</h1>
-    <h2>Enjoy "<strong><%= @booking.activity.name %></strong>"!</h2>
+<div class="container d-flex justify-content-between">
+  <div class="card confirm-card w-50">
 
-    <h2>Your booking is here:</h2>
+    <div class="confirm-title">
+      <h1>You've made <%= image_tag "man.png", id: "icon" %>t!</h1>
+      <h2>Enjoy "<strong><%= @booking.activity.name %></strong>"!</h2>
+    </div>
 
-      <%= image_tag "QR_CODE.jpg" , class: "position-absolute"%>
+    <div clas="confirm-body">
+      <div class="d-flex justify-content-center m-3 ">
+        <%= image_tag "QR_CODE.jpg", id: "QRcode" %>
+      </div>
 
-   </div>
-</div>
+      <div class="confirm-text m-2">
+        <p><strong>Vanue:</strong> <%= @booking.activity.location %></p>
+        <p><strong>Date:</strong> <%= @booking.date.strftime("%d %b %Y") %></p>
+        <p><strong>Time:</strong> <%= @booking.date.strftime("%H:%M") %></p>
+      </div>
+    </div>
 
-<div class= "container">
-  <div class="">
+  </div>
+   <%# </div> %>
+<%# </div> %>
+
+<%# <div class= "container"> %>
+  <div class="w-50 p-3 form">
+    <h1><strong>Share your experince here...</strong></h1>
+
     <%= simple_form_for([@booking, @review]) do |f| %>
       <%= f.input :comment %>
       <%= f.input :rating %>
-      <%= f.button :submit, placeholder: "Leave your review" %>
+      <%= f.button :submit, placeholder: "Leave your review", class: "button" %>
     <% end %>
-
     <%# <%= link_to "Done", new_review_booking_path(@booking), class:"button"  %>
   </div>
+
 </div>
