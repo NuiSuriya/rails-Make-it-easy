@@ -1,77 +1,66 @@
-
-
 <div class="container">
 
-
-  <div class="card-map row">
-    <div class="card col-sm-7">
-      <div class="photos">
-        <img src="<%= @activity.image_url %>" class="card-img" alt="...">
-        <div class="card-body d-flex justify-content-between">
-          <div class="card-description">
-            <h5 class="card-title text-capitalize"> <%= @activity.name%></h5>
-            <h6 class="card-title text-capitalize"> <%= @activity.location%></h6>
-            <h6 class="card-title text-capitalize"> <%= @activity.date%></h6>
-            <h6 class="card-title text-capitalize"> <%= @activity.time.strftime("%H:00")%></h6>
-            <p class="card-text"><%= @activity.description %></p>
-            <%= link_to "Back to activities", activities_path %>
-
-
-
-
-
-      <div class="map col-sm-4">
-        <div style="width: 400px; height: 100vh; position: sticky; top: 0;"
-          data-controller="map"
-          data-map-markers-value="<%= @marker.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+  <div class="d-flex justify-content-lg-between">
+    <div class="card mb-5" style="width: 57%; height: 40%; padding: 25px;">
+      <img src="<%= @activity.image_url %>" class="card-img-top" alt="..." style="">
+      <div class="card-body" style="margin: 15px;">
+        <%# <div class="card-description"> %>
+        <h5 class="card-title text-capitalize"> <%= @activity.name%></h5>
+        <h6 class="card-text text-capitalize"> <%= @activity.location%></h6>
+        <h6 class="card-text text-capitalize"> <%= @activity.date%></h6>
+        <h6 class="card-text text-capitalize"> <%= @activity.time.strftime("%H:00")%></h6>
+        <p class="card-text"><%= @activity.description %></p>
+        <%# </div> %>
       </div>
     </div>
-    <div class="d-flex justify-content-start m-10">
-      <%= link_to "Book now!", new_activity_booking_path(@activity), class:"button"  %>
+      <%# <div class= "map col-sm-4"> %>
+      <div style="width: 40%; height: 100vh; position: sticky; top: 0;"
+        data-controller="map"
+        data-map-markers-value="<%= @marker.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <%# </div> %>
+  </div>
+                                    <%# <%= link_to "Book now!", new_activity_booking_path(@activity), class:"button"  %>
+  <div class="">
+    <div class="card d-flex justify-content-center align-items-center", style="weight: 15%; height: 15%; padding: 25px; margin: 25px;">
+      <%= simple_form_for [@activity, @booking] do |f|%>
+        <div class="d-flex">
+          <%= f.input :date, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
+          <%= f.input :time, label: false,
+          collection: ["10","11","12","13","14","15","16","17","18","19","20"],
+          prompt: "hr", input_html: {class: "box"} %>
+          <p class="time">:</p>
+          <%= f.input :time, label: false, collection: ["00","15","30","45"],
+            prompt: "min", input_html: {class: "box"}%>
+        </div>
+        <div class="d-flex">
+          <div class="w-30">
+            <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
+            label: false, input_html: {class: "box ms-1"} %>
+          </div>
+        </div>
+        <%= f.submit "Book now!", class: "button" %>
+        <%= link_to "Back", activities_path, class: "btn btn-dark", style:"margin-bttom: 10px; border-radius: 25px;" %>
+      <% end %>
     </div>
-    <div class="card justify-content-around">
+    <div class="card align-items-center", style="weight: 15%; height: 15%; padding: 25px; margin: 25px;">
       <div class="card-header">
-        <h2><%= pluralize @activity.reviews.size, "review" %></h2>
+        <h4><%= pluralize @activity.reviews.size, "review" %></h4>
       </div>
       <div class="card-body">
-        <% if @activity.reviews.blank? %>
-        There's not reviews yet for <%= @activity.name %> realize your booking and
-        be the first in leaving one.
-        <% else %>
-      <blockquote class="blockquote mb-0">
-          <% @activity.reviews.each do |review| %>
-            <p><%= review.comment %></p>
-            <footer class="blockquote-footer">A traveler wants to<cite title="Source Title">Make it easier for you</cite></footer>
-          <% end %>
-        <% end %>
-      </blockquote>
+          <% if @activity.reviews.blank? %>
+          There's not reviews yet for <%= @activity.name %> realize your booking and
+          be the first in leaving one.
+          <% else %>
+          <blockquote class="blockquote mb-0">
+            <% @activity.reviews.each do |review| %>
+              <p><%= review.comment %></p>
+              <footer class="blockquote-footer">A traveler wants to <cite title="Source Title">Make it easier for you</cite></footer>
+            <% end %>
+            <% end %>
+          </blockquote>
       </div>
     </div>
   </div>
-
-</div>
-
-<div class="container">
-  <div class="card-form p-3">
-    <%= simple_form_for [@activity, @booking] do |f|%>
-      <div class="d-flex">
-        <div class="w-30">
-          <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
-          label: false, input_html: {class: "box ms-1"} %>
-        </div>
-      </div>
-      <div class="d-flex">
-        <%= f.input :date, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
-        <%= f.input :time, label: false,
-        collection: ["10","11","12","13","14","15","16","17","18","19","20"],
-        prompt: "hr", input_html: {class: "box"} %>
-        <p class="time">:</p>
-        <%= f.input :time, label: false, collection: ["00","15","30","45"],
-          prompt: "min", input_html: {class: "box"}%>
-      </div>
-      <%= f.submit "Book now!", class: "button" %>
-    <% end %>
-    </div>
 </div>
