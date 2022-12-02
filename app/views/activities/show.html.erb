@@ -16,35 +16,9 @@
             <p class="card-text"><%= @activity.description %></p>
             <%= link_to "Back to activities", activities_path %>
 
-<div class="container">
-  <div class="card-form p-3">
-    <%= simple_form_for [@activity, @booking] do |f|%>
-      <div class="d-flex">
-        <div class="w-30">
-          <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
-          label: false, input_html: {class: "box ms-1"} %>
-        </div>
-      </div>
-      <div class="d-flex">
-        <%= f.input :date, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
-        <%= f.input :time, label: false,
-        collection: ["10","11","12","13","14","15","16","17","18","19","20"],
-        prompt: "hr", input_html: {class: "box"} %>
-        <p class="time">:</p>
-        <%= f.input :time, label: false, collection: ["00","15","30","45"],
-          prompt: "min", input_html: {class: "box"}%>
-      </div>
-      <%= f.submit "Book now!", class: "button" %>
-    <% end %>
-    </div>
-</div>
 
-          </div>
-          <div class="card-price">
-            <h4 class="card-title text-capitalize"><%= "#{@activity.price} €" %></h4>
-          </div>
-        </div>
-      </div>
+
+
 
       <div class="map col-sm-4">
         <div style="width: 400px; height: 100vh; position: sticky; top: 0;"
@@ -77,4 +51,27 @@
     </div>
   </div>
 
+</div>
+
+<div class="container">
+  <div class="card-form p-3">
+    <%= simple_form_for [@activity, @booking] do |f|%>
+      <div class="d-flex">
+        <div class="w-30">
+          <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
+          label: false, input_html: {class: "box ms-1"} %>
+        </div>
+      </div>
+      <div class="d-flex">
+        <%= f.input :date, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
+        <%= f.input :time, label: false,
+        collection: ["10","11","12","13","14","15","16","17","18","19","20"],
+        prompt: "hr", input_html: {class: "box"} %>
+        <p class="time">:</p>
+        <%= f.input :time, label: false, collection: ["00","15","30","45"],
+          prompt: "min", input_html: {class: "box"}%>
+      </div>
+      <%= f.submit "Book now!", class: "button" %>
+    <% end %>
+    </div>
 </div>
