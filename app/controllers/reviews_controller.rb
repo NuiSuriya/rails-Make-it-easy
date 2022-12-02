@@ -1,13 +1,13 @@
 class ReviewsController < ApplicationController
 
   def create
-    @booking = Booking.find(params[:activity_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to activity_path(@activity)
+      redirect_to activity_path(@booking.activity)
     else
-      render "booking/show", status: :unprocessable_entity
+      render "bookings/show", status: :unprocessable_entity
     end
   end
 

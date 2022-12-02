@@ -26,6 +26,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  config.hosts << "d27a-92-108-209-229.ngrok.io" ## just added this line, i suppose that is in the correct part
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

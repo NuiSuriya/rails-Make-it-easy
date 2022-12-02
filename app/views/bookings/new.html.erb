@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="card p-3">
-    <%= simple_form_for(@booking) do |f|%>
+    <%= simple_form_for([@activity, @booking]) do |f|%>
       <div class="d-flex">
         <div class="w-30">
           <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
