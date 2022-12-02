@@ -28,4 +28,9 @@ $blue: #003DE5;
 
 .home-background{
   background: $blue;
+  height: 100vh;
+  .banner-img {
+    height: 100vh;
+
+  }
 }
