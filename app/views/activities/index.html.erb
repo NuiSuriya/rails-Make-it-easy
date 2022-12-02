@@ -11,7 +11,7 @@
         <%= submit_tag "Search", class: "button" %>
       <% end %>
     </div>
-  <div class="small-card row">
+  <div class="small-card card-box-shadow row">
     <div class="card-grid col-sm-8">
       <% @activities.each do |activity| %>
         <div class="card flex-grow-1">
@@ -23,8 +23,8 @@
           <% end %>
 
             <h6 class="card-title text-capitalize"><%= activity.name.capitalize %></h6>
-            <p class="card-title text-capitalize"> <%= activity.location.split.last %> </p>
-            <%= link_to "Look it!", activity_path(activity), class: "button"  %>
+            <p class="card-title text-capitalize card-location"> <%= activity.location.split.last %> </p>
+            <%= link_to "Look it!", activity_path(activity), class: "button activity-button"  %>
           </div>
         </div>
       <% end %>

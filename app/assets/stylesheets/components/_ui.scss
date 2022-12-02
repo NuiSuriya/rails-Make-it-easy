@@ -14,6 +14,8 @@ $blue: #003DE5;
   margin-left: 3px;
   font-weight: bolder ;
 
+
+
   &:hover{
     background: $blue;
     color: white;
@@ -22,11 +24,20 @@ $blue: #003DE5;
 }
 
 .card-title{
-  font-weight: bold;
+  margin: 5px;
+  color: rgb(120, 99, 99);
+
+
+
+}
+
+.card-location {
+  font-weight: bolder ;
 }
 
 .small-card {
   display: flex;
+  position: relative;
 }
 
 .card-grid{
@@ -40,10 +51,11 @@ $blue: #003DE5;
 
 .card{
   border-radius: 5px;
-  height: 400px;
+  height: 350px;
 
 
   .card-img-top {
+    margin-bottom: 5px;
     width: 100%;
     height: 50%;
     object-fit: cover;
@@ -95,4 +107,13 @@ border-radius: 50%;
       font-weight: bolder ;
     }
   }
+}
+
+
+.activity-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+
+
 }
