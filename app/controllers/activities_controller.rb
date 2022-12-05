@@ -15,6 +15,7 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url("logo.png")
       }
     end
+    @like = Like.new
   end
 
   def show

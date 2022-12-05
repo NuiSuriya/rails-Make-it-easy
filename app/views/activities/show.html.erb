@@ -34,16 +34,17 @@
           <%= f.input :time, label: false, collection: ["00","15","30","45"],
             prompt: "min", input_html: {class: "box"}%>
         </div>
+        
         <div class="d-flex">
           <div class="w-30">
             <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
             label: false, input_html: {class: "box ms-1"} %>
           </div>
         </div>
-        <%= f.submit "Book now!", class: "button" %>
-        <%= link_to "Back", activities_path, class: "btn btn-dark", style:"margin-bttom: 10px; border-radius: 25px;" %>
+        <%= f.submit "Book now!", class: "Back", activities_path, class: "btn btn-dark", style:"margin-bttom: 10px; border-radius: 25px;" %>
       <% end %>
     </div>
+
     <div class="card align-items-center", style="weight: 15%; height: 15%; padding: 25px; margin: 25px;">
       <div class="card-header">
         <h4><%= pluralize @activity.reviews.size, "review" %></h4>

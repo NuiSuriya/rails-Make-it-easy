@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   resources :activities, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
+    resources :likes, only: :create
   end
+
+  resources :likes, only: :destroy
 
   resources :bookings, only: [:index, :show] do
     resources :reviews, only: :create

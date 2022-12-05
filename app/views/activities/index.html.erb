@@ -21,6 +21,21 @@
             <% else %>
             <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="...">
           <% end %>
+          <%# <%= link_to "Like", activity_likes_path(activity), data: {turbo_method: :post, turbo_confirm: "Add to favs?"} %>
+
+          <% @activity = activity %>
+
+          <% if current_user.likes.where(activity: activity).empty? %>
+            <%= simple_form_for [@activity, @like] do |f| %>
+              <%= f.button :button do %>
+              <i class="fa-regular fa-heart"></i>
+              <% end %>
+            <% end %>
+            <% else %>
+              <%= link_to like_path(current_user.likes.where(activity: activity).first), data: {turbo_method: :delete} do %>
+              <i class="fa-solid fa-heart"></i>
+              <% end %>
+          <% end %>
 
             <h6 class="card-title text-capitalize"><%= activity.name.capitalize %></h6>
             <p class="card-title text-capitalize card-location"> <%= activity.location.split.last %> </p>

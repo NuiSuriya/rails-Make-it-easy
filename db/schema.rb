@@ -93,7 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_163445) do
   end
 
   add_foreign_key "activities", "categories"
-  add_foreign_key "activities", "users"
+  add_foreign_key "activities", "users" 
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
   add_foreign_key "likes", "activities"
