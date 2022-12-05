@@ -14,10 +14,61 @@
 }
 
 .card-form{
-  width: 30rem;
-  // background-color: $blue;
+  // width: 100rem;
+  background-color: $blue;
 }
 
 .confirm-card {
+  // background-color: $blue;
+  margin-right: 20px ;
+  height: auto;
+  // position: absolute;
+  border-radius: 10px;
+  font-size: larger;
+
+  h1{
+    font-size: 70px;
+  }
+
+  p{
+    font-size: 25px;
+  }
+}
+
+#QRcode{
+  width: 200px;
+  // position: relative;
+  left: 100px;
+  top: 200px;
+}
+
+.confirm-title{
+  color: $blue;
+  padding: 20px;
+  text-align: center;
+}
+
+.confirm-text{
+  // position: absolute;
+  bottom: 0px;
+  // right: 20px;
+  padding: 10px;
+  color: $blue;
+  text-align: center;
+}
+
+.confirm-body{
+  text-align: center;
+}
+
+#icon{
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.form{
   background-color: $blue;
+  color: white;
+  height: fit-content;
+  border-radius: 8px;
 }

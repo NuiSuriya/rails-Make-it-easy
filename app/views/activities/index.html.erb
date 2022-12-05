@@ -11,16 +11,20 @@
         <%= submit_tag "Search", class: "button" %>
       <% end %>
     </div>
+
   <div class="small-card card-box-shadow row">
     <div class="card-grid col-sm-8">
       <% @activities.each do |activity| %>
         <div class="card flex-grow-1">
           <div class="card-body">
-          <% if activity.image_url %>
-             <img src="<%= activity.image_url %>" class="card-img-top" alt="...">
+          <% if activity.photos.attached? %>
+             <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+             rgba(0,0,0,0.2)), url('<%= cl_image_path activity.photos.first.key, height: 400, crop: :fill %>')">
+              </div>
             <% else %>
             <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="...">
           <% end %>
+
           <%# <%= link_to "Like", activity_likes_path(activity), data: {turbo_method: :post, turbo_confirm: "Add to favs?"} %>
 
           <% @activity = activity %>
@@ -36,6 +40,7 @@
               <i class="fa-solid fa-heart"></i>
               <% end %>
           <% end %>
+
 
             <h6 class="card-title text-capitalize"><%= activity.name.capitalize %></h6>
             <p class="card-title text-capitalize card-location"> <%= activity.location.split.last %> </p>

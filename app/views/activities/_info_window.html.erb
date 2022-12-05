@@ -1,4 +1,7 @@
-<img src="<%= activity.image_url %>" class="card-img" alt="...">
+<% if activity.photos.attached? %>
+  <img src="<%= cl_image_path activity.photos.first.key %>" class="card-img" alt="...">
+<% end %>
+
 <h3><%= activity.name.capitalize %></h3>
 <p><%= activity.location.capitalize %></p>
 <%= link_to "Look it!", activity_path(activity), class: "button"  %>

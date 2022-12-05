@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.activity = @activity
     @booking.user = current_user
+    
     if @booking.save
       redirect_to booking_path(@booking)
     else
