@@ -53,9 +53,10 @@
     <div class="card d-flex justify-content-center align-items-center card-form", style="weight: 15%; height: 15%; padding: 25px; margin: 25px;">
 
       <%= simple_form_for [@activity, @booking] do |f|%>
+
         <%# <div class="d-flex"> %>
 
-          <div class="w-30">
+            <div class="w-30">
             <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
             label: false, input_html: {class: "box ms-1"} %>
           </div>
@@ -72,6 +73,7 @@
         </div>
         <% end %>
         </div>
+
 
     </div>
 
