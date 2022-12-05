@@ -2,7 +2,34 @@
 
   <div class="d-flex justify-content-lg-between">
     <div class="card mb-5" style="width: 57%; height: 40%; padding: 25px;">
-      <img src="<%= @activity.image_url %>" class="card-img-top" alt="..." style="">
+
+      <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% if @activity.photos.attached? %>
+            <% @activity.photos.each do |photo| %>
+              <% if photo == @activity.photos.first %>
+              <div class="carousel-item active card-img">
+                <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "d-block w-100" %>
+              </div>
+              <% else %>
+                <div class="carousel-item">
+                  <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class: "d-block w-100" %>
+                </div>
+              <% end %>
+
+            <% end %>
+          <% end %>
+        </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+
       <div class="card-body" style="margin: 15px;">
         <%# <div class="card-description"> %>
         <h5 class="card-title text-capitalize"> <%= @activity.name%></h5>
