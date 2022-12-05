@@ -1,0 +1,64 @@
+
+.my-page{
+  display: flex;
+  justify-content: space-around;
+
+  .dasboar-card {
+      background-color: rgb(255,112,0);
+      height: 540px;
+      width: 300px;
+
+      position: relative;
+
+
+
+    .avatar-dashboard {
+
+      position: absolute;
+      right: 115px;
+      top: -35px;
+
+      .avatar-large {
+        width: 70px;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        border: white 1px solid;
+      }
+
+
+    }
+
+  }
+
+  .bookings-cards {
+    height: 260px;
+    width: 530px;
+    margin: 20px;
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+
+
+  }
+
+  .liking-cards {
+    background-color: rgb(255,112,0);
+    height: 260px;
+    width: 530px;
+    margin: 20px;
+    margin-top: 0px;
+  }
+
+  .carousel-item {
+    transition-duration: 0s;
+    height: 260px;
+    width: 530px;
+  }
+
+  .booking-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+}
