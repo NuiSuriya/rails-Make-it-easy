@@ -1,6 +1,16 @@
 class BookingsController < ApplicationController
   before_action :set_activity, only: %i[new create]
 
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+    # @bookings.activities = @activities
+
+
+
+
+
+  end
+
   def show
     @booking = Booking.find(params[:id])
     @review = Review.new  # Added this line
@@ -15,7 +25,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.activity = @activity
     @booking.user = current_user
-    
+
     if @booking.save
       redirect_to booking_path(@booking)
     else
