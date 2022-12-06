@@ -1,6 +1,62 @@
-<div class="container">
-  <div class="small-card card-box-shadow row">
+<div class="container-fluid">
+  <%# <div class="small-card card-box-shadow row"> %>
+  <div class="col-sm-10 offset-sm-1">
     <div class="card-grid">
+
+      <%# ################# front card############################ %>
+      <%# <div class="card-body card-game flip-card"> %>
+        <div class="flip-card card-game">
+          <div class="flip-card-inner" tab-index="0">
+            <div class="flip-card-front">
+              <%# <label for="card1-open" aria-hidden="true"> %>
+              <h3 class="title-game">Card 1</h3>
+              <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+              </div>
+              <div class="circle">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="stroke" cx="60" cy="60" r="50"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <%# <%= style="background-image: url('<%= cl_image_path @activities.sample.photos.first.key %>)
+              <% random = @activities.sample %>
+              <div>
+                <img src="<%= cl_image_path random.photos.first.key %>" style="height: 400, crop: :fill" alt="">
+                <h3 class="title-game"><%= random.name %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%# </div> %>
+      <%# ############################## %>
+      <div class="card-body card-game">
+        <h3 class="title-game">Card 1</h3>
+        <div class="bar">
+          <div class="emptybar"></div>
+          <div class="filledbar"></div>
+        </div>
+        <div class="circle">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-body card-game">
+        <h3 class="title-game">Card 1</h3>
+        <div class="bar">
+          <div class="emptybar"></div>
+          <div class="filledbar"></div>
+        </div>
+        <div class="circle">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+        </div>
+      </div>
+      <%# ############################################### %>
       <% @activities.each do |activity| %>
         <div class="card card-game flex-grow card-index", style="width: 18rem;">
           <div class="card-body">
@@ -11,22 +67,32 @@
               <% else %>
               <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="...">
             <% end %>
-            <%= activity.name %>
+            <h5 class="title-game"> <%= activity.name %> </h5>
           </div>
         </div>
       <% end %>
-      <%# <div class="card">
-        <h3 class="title">Card 4</h3>
-        <div class="bar">
-          <div class="emptybar"></div>
-          <div class="filledbar"></div>
-        </div>
-        <div class="circle">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle class="stroke" cx="60" cy="60" r="50"/>
-          </svg>
-        </div>
-      </div> %>
     </div>
   </div>
 </div>
+
+<script>
+document.querySelectorAll('.flip-card-click .flip-card-inner').forEach(function(item) {
+    item.addEventListener('keypress', function(evt) { if (evt.keyCode == 13 || evt.keyCode == 32) { item.click(); } });
+});
+
+document.querySelectorAll('.flip-card-click').forEach(function(item) {
+    item.addEventListener('click', function () { this.classList.toggle('flipped');  });
+});
+</script>
+
+
+<%# <% @activities.each do |activity| %> %>
+  <%# <% if activity.photos.attached? %> %>
+    <%# <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), %>
+      <%# /* rgba(0,0,0,0.2)), url('<%= cl_image_path activity.photos.first.key, height: 400, crop: :fill %>')"> */ %>
+    <%# </div> %>
+    <%# <% else %> %>
+    <%# <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="..."> %>
+  <%# <% end %> %>
+  <%# <h5 class="title-game"> <%= activity.name %> </h5> %>
+<%# <% end %> %>
