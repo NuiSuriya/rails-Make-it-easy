@@ -1,0 +1,35 @@
+// .container-game {
+//   position: absolute;
+//   height: 300px;
+//   width: 600px;
+//   top: 60px;
+//   left: calc(50% - 300px);
+//   display: absolute;
+// }
+
+.card-game {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: -1rem 0 1rem rgba($color: #4b62f9, $alpha: 0.2);
+/*   margin-left: -50px; */
+  transition: 0.2s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card-game:not(:first-child) {
+  margin-left: -50px;
+}
+
+.card-game:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card-game:hover ~ .card-game {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}

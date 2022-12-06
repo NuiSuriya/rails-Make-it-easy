@@ -9,4 +9,8 @@ class PagesController < ApplicationController
   def index
     @activities = Activity.all
   end
+
+  def game
+    @activities = Activity.first(10)
+  end
 end
