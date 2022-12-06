@@ -12,6 +12,20 @@
       <% end %>
     </div>
 
+  <div class="thumbnail mb-3">
+    <% @categories.each do |category| %>
+      <div>
+        <% if category.photo.attached? %>
+          <%= link_to activities_path(category: category.name) do %>
+            <div class="thumbnail-img d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path category.photo.key, crop: :fill %>')">
+            <h4 class="link"><%= category.name %></h4>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="small-card card-box-shadow row">
     <div class="card-grid col-sm-8">
       <% @activities.each do |activity| %>

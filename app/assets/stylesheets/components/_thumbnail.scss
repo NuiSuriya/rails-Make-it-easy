@@ -1,0 +1,30 @@
+.thumbnail-img{
+  height: 100px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  transition: transform ease-in 0.2s;
+  text-decoration: none;
+    &:hover {
+      transform: scale(1.08);
+    }
+}
+
+.thumbnail{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow: 1;
+  // text-align: center;
+}
+
+// #category-title{
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+// }
+.link{
+  color: white;
+  text-decoration: none;
+}
