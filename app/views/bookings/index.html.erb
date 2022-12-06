@@ -1,17 +1,17 @@
-<% require 'date'  %>
+<%# <% require: 'date'%>
 
 <div class="container">
 
   <div class="my-page">
-    <div class="dasboar-card shadow">
+    <div class="dashboard-card shadow">
       <div class="avatar-dashboard">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large shadow" %>
       </div>
       <div class="user-information">
         <div class="name"><h4><%= "Hello #{current_user.username.capitalize}!" %></h2></div>
         <div class="dashboard-tow-buttons">
-          <button type="button" class="btn btn-warning dasboard-button">New Activity</button>
-          <button type="button" class="btn btn-warning dasboard-button">Change Profile</button>
+          <button type="button" class="btn button dasboard-button">New Activity</button>
+          <button type="button" class="btn button dasboard-button">Change Profile</button>
         </div>
         <div class="statistics">
           <% dates = [] %>
@@ -20,11 +20,31 @@
               <% dates << booking %>
             <% end %>
           <% end %>
-          <div class="statistic"><h6><%= "You have #{dates.size} upcoming activities." %><%= image_tag "orange_bag.png", class: "dashboard-icon" %></h6></div>
-          <div class="statistic"><h6> <%= "You had already #{@bookings.size - dates.size} activities." %><%= image_tag "blue_bag.png", class: "dashboard-icon" %></h6></div>
-          <div class="statistic"><h6> <%= "You can do #{@activities.size} activities." %><%= image_tag "orange_bag.png", class: "dashboard-icon" %></h6></div>
+          <div class="statistic">
+            <h6>
+              <%= image_tag "orange_bag.png", class: "dashboard-icon" %><%= "You have #{dates.size} upcoming activities." %>
+            </h6>
+          </div>
+          <div class="statistic">
+            <h6>
+              <%= image_tag "blue_bag.png", class: "dashboard-icon" %><%= "You had already #{@bookings.size - dates.size} activities." %>
+            </h6>
+          </div>
+          <div class="statistic mt-3">
+            <h6>
+              <%= image_tag "orange_bag.png", class: "dashboard-icon" %><%= "#{@activities.size} activities are waiting for" %>
+            </h6>
+          </div>
         </div>
       </div>
+
+          <div class="my-map m-3"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+
+
     </div>
 
     <div class="tester">
@@ -40,9 +60,11 @@
             <% @bookings.each do |booking| %>
               <div class="carousel-item">
                 <img src="<%= cl_image_path booking.activity.photos.first.key %>" class="d-block w-100" alt="..">
-                <div class="carousel-caption d-none d-md-block background">
-                  <h5><%= link_to booking.activity.name, booking_path(booking) %></h5>
-                  <p><%= "#{booking.date.strftime("%d %b %Y")}, #{booking.date.strftime("%H:%M")}" %></p>
+                <div class="carousel-caption d-none d-md-block">
+                  <div class="background">
+                    <h5><%= link_to booking.activity.name, booking_path(booking), class: "link" %></h5>
+                    <p><%= "#{booking.date.strftime("%d %b %Y")} #{booking.date.strftime("%H:%M")}" %></p>
+                  </div>
                 </div>
                 <div class="carousel-caption d-none d-md-block">
                 </div>
@@ -85,4 +107,3 @@
 </div>
 
  <%# ######################################################################### %>
-

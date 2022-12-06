@@ -23,6 +23,28 @@ $blue: #003DE5;
   }
 }
 
+.button-2 {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $blue;
+  transition: background 0.4s center;
+  width: fit-content;
+  text-decoration: none;
+  border: none;
+  border-color: white;
+  margin-left: 3px;
+  font-weight: bolder ;
+
+
+
+  &:hover{
+    background: white;
+    color: $orange;
+    font-weight: bolder ;
+  }
+}
+
 .card-title{
   // margin: 5px;
   // color: rgb(120, 99, 99);

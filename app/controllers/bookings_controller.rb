@@ -3,13 +3,17 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
-    @activities = Activity.all
+    @activities = current_user.my_map
     @likes = Like.all
 
-
-
-
-
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {activity: activity}),
+        image_url: helpers.asset_url("logo.png")
+      }
+    end
   end
 
   def show
