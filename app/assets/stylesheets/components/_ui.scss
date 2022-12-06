@@ -24,12 +24,20 @@ $blue: #003DE5;
 }
 
 .card-title{
-  margin: 5px;
-  color: rgb(120, 99, 99);
-
-
-
+  // margin: 5px;
+  // color: rgb(120, 99, 99);
+  color: $blue;
+  font-weight: bolder;
 }
+
+.card-text {
+  // color: rgb(120, 99, 99);
+  color: $blue;
+}
+
+// .card-show{
+//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
 
 .card-location {
   font-weight: bolder ;
@@ -113,6 +121,4 @@ border-radius: 50%;
   position: absolute;
   bottom: 15px;
   right: 15px;
-
-
 }

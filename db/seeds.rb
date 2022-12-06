@@ -250,7 +250,7 @@ activity = Activity.create!(
   name: "Eat your way around food stalls in a former tram depot",
   user: User.all.sample,
   category: food_and_drinks,
-  location: "Hannie Dankbaarpassage 47, 1053 RT AMSTERDAM",
+  location: "Hannie Dankbaarpassage 47, 1053 RT Amsterdam",
   description: 'An indoor food court - inspired by Torvehallerne in Copenhague, Mercado de San Miguel in Madrid and the Borough Market in London - that consists of a large hall with over 20 different stall restaurants.',
   date: Date.today,
   time: Time.now + (3600*5),
