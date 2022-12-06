@@ -29,7 +29,7 @@
   <div class="small-card card-box-shadow row">
     <div class="card-grid col-sm-8">
       <% @activities.each do |activity| %>
-        <div class="card flex-grow-1">
+        <div class="card flex-grow card-index">
           <div class="card-body">
           <% if activity.photos.attached? %>
              <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3),
@@ -42,23 +42,26 @@
           <%# <%= link_to "Like", activity_likes_path(activity), data: {turbo_method: :post, turbo_confirm: "Add to favs?"} %>
 
           <% @activity = activity %>
-
-          <% if current_user.likes.where(activity: activity).empty? %>
-            <%= simple_form_for [@activity, @like] do |f| %>
-              <%= f.button :button do %>
-              <i class="fa-regular fa-heart"></i>
+          <% if current_user %>
+            <% if current_user.likes.where(activity: activity).empty? %>
+              <%= simple_form_for [@activity, @like] do |f| %>
+                <%= f.button :button do %>
+                <i class="fa-regular fa-heart"></i>
+                <% end %>
+              <% end %>
+              <% else %>
+                <%= link_to like_path(current_user.likes.where(activity: activity).first), data: {turbo_method: :delete} do %>
+                <i class="fa-solid fa-heart"></i>
               <% end %>
             <% end %>
-            <% else %>
-              <%= link_to like_path(current_user.likes.where(activity: activity).first), data: {turbo_method: :delete} do %>
-              <i class="fa-solid fa-heart"></i>
-              <% end %>
           <% end %>
-
-
-            <h6 class="card-title text-capitalize"><%= activity.name.capitalize %></h6>
-            <p class="card-title text-capitalize card-location"> <%= activity.location.split.last %> </p>
-            <%= link_to "Look it!", activity_path(activity), class: "button activity-button"  %>
+          <h6 class="card-title text-capitalize"><%= activity.name.capitalize %></h6>
+          <p class="card-title text-capitalize card-location"> <%= activity.location.split.last %> </p>
+          <%= link_to "Look", activity_path(activity), class: "button activity-button" %>
+          <%# <%= link_to "", activity_path(activity), class:"fa-solid fa-arrow-right justify-items-end", style:"color: $orange;" %>
+          <div>
+            <%# <i class="fa-solid fa-arrow-right", style="color: $orange;"></i> %>
+          </div>
           </div>
         </div>
       <% end %>

@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   end
 
   get '/ui', to: 'pages#uikit'
+  get '/game', to: 'pages#game'
+
 end
