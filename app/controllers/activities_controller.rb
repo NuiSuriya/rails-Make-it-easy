@@ -4,6 +4,9 @@ class ActivitiesController < ApplicationController
   def index
     if params[:query].present?
       @activities = Activity.where("name ILIKE ?", "%#{params[:query]}%")
+    elsif params[:category].present?
+      @category = Category.find_by(name: params[:category])
+      @activities = Activity.where(category: @category)
     else
       @activities = Activity.all
     end
@@ -16,6 +19,7 @@ class ActivitiesController < ApplicationController
       }
     end
     @like = Like.new
+    @categories = Category.all
   end
 
   def show
