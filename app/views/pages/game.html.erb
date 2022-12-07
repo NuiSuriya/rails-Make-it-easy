@@ -1,76 +1,63 @@
 <div class="container-fluid">
   <%# <div class="small-card card-box-shadow row"> %>
-  <div class="col-sm-10 offset-sm-1">
-    <div class="card-grid">
+  <div class="col-sm-10 offset-sm-1 align-items-center">
+  <h3 class="title-game">If you don't know what to choose, we <strong>make it easy</strong> for you!</h3>
+  <h3 class="title-game"><strong>Choose</strong> a card, and start the adventure...</h3>
 
+    <div class="card-grid aligning">
       <%# ################# front card############################ %>
       <%# <div class="card-body card-game flip-card"> %>
-        <div class="flip-card card-game">
-          <div class="flip-card-inner" tab-index="0">
-            <div class="flip-card-front">
-              <%# <label for="card1-open" aria-hidden="true"> %>
-              <h3 class="title-game">Card 1</h3>
-              <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-              </div>
-              <div class="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="stroke" cx="60" cy="60" r="50"/>
-                </svg>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <%# <%= style="background-image: url('<%= cl_image_path @activities.sample.photos.first.key %>)
-              <% random = @activities.sample %>
-              <div>
-                <img src="<%= cl_image_path random.photos.first.key %>" style="height: 400, crop: :fill" alt="">
-                <h3 class="title-game"><%= random.name %></h3>
-              </div>
+      <div class="flip-card-click card-game">
+        <div class="flip-card-inner card-game" tab-index="0">
+          <div class="flip-card-front card-game">
+            <h2>Play&flip</h2>
+          </div>
+          <div class="flip-card-back card-game">
+            <% random = @activities.sample %>
+            <img class="card-img-top" style="height: 400, crop: :fill; padding: 5px; border-radius: 15px;"
+              src="<%= cl_image_path random.photos.first.key %>" style="" alt="the-game-card">
+            <div>
+              <h3 class="title-game"><%= random.name %></h3>
+              <%= link_to activity_path(random) do %>
+                 <i data-feather="arrow-right-circle"></i>
+              <% end %>
             </div>
           </div>
         </div>
-      <%# </div> %>
+      </div>
       <%# ############################## %>
-      <div class="card-body card-game">
-        <h3 class="title-game">Card 1</h3>
-        <div class="bar">
-          <div class="emptybar"></div>
-          <div class="filledbar"></div>
-        </div>
-        <div class="circle">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle class="stroke" cx="60" cy="60" r="50"/>
-          </svg>
-        </div>
-      </div>
-      <div class="card-body card-game">
-        <h3 class="title-game">Card 1</h3>
-        <div class="bar">
-          <div class="emptybar"></div>
-          <div class="filledbar"></div>
-        </div>
-        <div class="circle">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle class="stroke" cx="60" cy="60" r="50"/>
-          </svg>
-        </div>
-      </div>
-      <%# ############################################### %>
-      <% @activities.each do |activity| %>
-        <div class="card card-game flex-grow card-index", style="width: 18rem;">
-          <div class="card-body">
-            <% if activity.photos.attached? %>
-              <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3),
-                rgba(0,0,0,0.2)), url('<%= cl_image_path activity.photos.first.key, height: 400, crop: :fill %>')">
-              </div>
-              <% else %>
-              <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="...">
+      <div class="flip-card-click card-game">
+        <div class="flip-card-inner card-game" tab-index="0">
+          <div class="flip-card-front card-game">
+            <h2>Play&flip</h2>
+          </div>
+          <div class="flip-card-back card-game">
+            <% random = @activities.sample %>
+            <img class="card-img-top" style="height: 400, crop: :fill; padding: 5px; border-radius: 15px;"
+              src="<%= cl_image_path random.photos.first.key %>" style="" alt="the-game-card">
+            <h3 class="title-game"><%= random.name %></h3>
+            <%= link_to activity_path(random) do %>
+               <i data-feather="arrow-right-circle"></i>
             <% end %>
-            <h5 class="title-game"> <%= activity.name %> </h5>
           </div>
         </div>
-      <% end %>
+      </div>
+      <div class="flip-card-click card-game">
+        <div class="flip-card-inner card-game" tab-index="0">
+          <div class="flip-card-front card-game">
+            <h2>Play&flip</h2>
+          </div>
+          <div class="flip-card-back card-game">
+            <% random = @activities.sample %>
+            <img class="card-img-top" style="height: 400, crop: :fill; padding: 5px; border-radius: 15px;"
+              src="<%= cl_image_path random.photos.first.key %>" style="" alt="the-game-card">
+            <h3 class="title-game"><%= random.name %></h3>
+            <%= link_to activity_path(random) do %>
+               <i data-feather="arrow-right-circle"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -83,16 +70,6 @@ document.querySelectorAll('.flip-card-click .flip-card-inner').forEach(function(
 document.querySelectorAll('.flip-card-click').forEach(function(item) {
     item.addEventListener('click', function () { this.classList.toggle('flipped');  });
 });
+
+
 </script>
-
-
-<%# <% @activities.each do |activity| %> %>
-  <%# <% if activity.photos.attached? %> %>
-    <%# <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), %>
-      <%# /* rgba(0,0,0,0.2)), url('<%= cl_image_path activity.photos.first.key, height: 400, crop: :fill %>')"> */ %>
-    <%# </div> %>
-    <%# <% else %> %>
-    <%# <img src="https://tinypng.com/images/social/website.jpg" class="card-img-top" alt="..."> %>
-  <%# <% end %> %>
-  <%# <h5 class="title-game"> <%= activity.name %> </h5> %>
-<%# <% end %> %>
