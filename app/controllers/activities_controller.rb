@@ -43,7 +43,6 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_param)
     @activity.user = current_user
-
     if @activity.save
       redirect_to activity_path(@activity)
     else
@@ -54,6 +53,11 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_param
-    params.require(:activity).permit(:name, :location, :date, :time, :price, photos: [])
+    params.require(:activity).permit(:name, :description, :category_id, :location, :date, :time, :price, photos: [])
+  end
+
+  def set_date_and_time
+    @date = Date.new(activity_param[:month].to_i, activity_param[:day].to_i)
+    @time = Date.new(activity_param[:hour].to_i, activity_param[:minute].to_i)
   end
 end

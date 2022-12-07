@@ -1,1 +1,37 @@
-<h1>create a new booking</h1>
+<div class="container">
+  <div class="col-lg-6 mx-auto">
+    <div class="">
+      <ul class="form-boxes">
+        <%= simple_form_for [@activity] do |f| %>
+          <%= f.input :name, placeholder:"Vintage art and design market in Posthoornkerk" %>
+          <%= f.input :description, placeholder:"Haarlemmerstraat 124-126, 1013 EX Amsterdam" %>
+          <%= f.association :category, as: :select %>
+          <%# <%= select_tag(:category, options_for_select([['Sports'], ['Events'], ['Hidden Gems'], ['Art and Museums'], ['Food & drinks']])) %>
+          <%= f.input :location, placeholder:"Haarlemmerstraat 124-126, 1013 EX Amsterdam" %>
+          <%= f.date_select :date, ignore_time: true, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
+          <%= f.time_select :date, ignore_date: true, html5: true %>
+
+          <%= f.input :price, placeholder:"€/day" %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <div class="d-flex flex-row-reverse">
+            <%= f.submit "Add a new activity", class:"button" %>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

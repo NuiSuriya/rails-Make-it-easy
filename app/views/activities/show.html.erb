@@ -36,7 +36,7 @@
         <h5 class="card-title text-capitalize"><%= @activity.name%></h5>
         <h6 class="card-text text-capitalize"> <%= @activity.location%></h6>
         <h6 class="card-text text-capitalize"> <%= @activity.date.strftime("%d %b %Y")%></h6>
-        <h6 class="card-text text-capitalize"> <%= @activity.time.strftime("%H:00")%></h6>
+        <h6 class="card-text text-capitalize"> <%= @activity.date.strftime("%H:00")%></h6>
         <p class=""><%= @activity.description %></p>
         <%# </div> %>
       </div>
