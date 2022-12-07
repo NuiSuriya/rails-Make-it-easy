@@ -13,4 +13,15 @@ class PagesController < ApplicationController
   def game
     @activities = Activity.first(10)
   end
+
+  def upcoming
+    @bookings = Booking.where(user_id: current_user.id)
+    @dates = []
+    @bookings.each do |booking|
+      if booking.date > Date.today
+        @dates << booking
+      end
+    end
+
+  end
 end

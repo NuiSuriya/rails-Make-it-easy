@@ -10,9 +10,10 @@
       <div class="user-information">
         <div class="name"><h4><%= "Hello #{current_user.username.capitalize}!" %></h2></div>
         <div class="dashboard-tow-buttons">
-          <button type="button" class="btn button dasboard-button">New Activity</button>
-          <button type="button" class="btn button dasboard-button">Change Profile</button>
+          <button type="button" class="btn button dasboard-button"><%= link_to "New Activity", new_activity_path  %></button>
+          <button type="button" class="btn button dasboard-button"><%= link_to "Upcoming Activities", upcoming_path  %></button>
         </div>
+
         <div class="statistics">
           <% dates = [] %>
           <% @bookings.each do |booking| %>

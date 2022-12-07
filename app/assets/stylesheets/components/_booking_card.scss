@@ -1,0 +1,31 @@
+
+.upcoming-activities-card {
+  height: 150px;
+  margin-bottom: 32px;
+}
+
+.upcoming-activities-left-block{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.upcoming-activies-picture {
+  height: 100%;
+  img{
+    height: 98%;
+    width: 16vw;
+    object-fit: cover;
+  }
+}
+.upcoming-activities-qrcode {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+.upcoming-activities-information {
+  align-self: center;
+}
+.upcoming-activities-name {
+  font-weight: 500;
+}
