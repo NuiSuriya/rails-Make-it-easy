@@ -1,6 +1,6 @@
 <div class="container">
   <% @dates.each do |date| %>
-    <div class="upcoming-activities-card shadow rounded-4 d-flex justify-content-between">
+    <div class="upcoming-activities-card mt-2 shadow rounded-4 d-flex justify-content-between">
       <div class="upcoming-activities-left-block">
         <div class="upcoming-activies-picture m-1 p-1">
           <img src="<%= cl_image_path date.activity.photos.first.key %>" class="d-block rounded-4" alt="..">
