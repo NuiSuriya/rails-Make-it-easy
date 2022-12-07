@@ -80,11 +80,26 @@
     display: flex;
     flex-wrap: nowrap;
     .background {
-      background-color: $blue;
+      background-color: white;
       // background-color: rgba(0, 0, 0, 0.25);
-      height: 40%;
-
+      height: 104px;
       border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px;
+      &.all-activities{
+        padding: 15px;
+      }
+      p {
+        margin: 0px !important;
+        color: $orange;
+      }
+
+      h5{
+        color: $orange;
+      }
     }
     .card-image {
       border-radius: 8px;
@@ -103,6 +118,9 @@
     transition-duration: 0s;
     height: 260px;
     width: 530px;
+    img {
+      object-fit: cover;
+    }
   }
 
   .booking-image {
@@ -172,4 +190,12 @@ outline: 1px solid $orange;
 
 .my-map{
   height: 50%;
+}
+
+.show-link{
+  color: $orange;
+  &:hover{
+    text-decoration: none;
+    color: $blue;
+  }
 }
