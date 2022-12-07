@@ -15,7 +15,7 @@
 
 .card-form{
   // width: 100rem;
-  background-color: $blue;
+  background-color: white;
   border-radius: 5px;
 }
 
@@ -71,5 +71,13 @@
   background-color: $blue;
   color: white;
   height: fit-content;
-  border-radius: 8px;
+  border-radius: 5px;
+}
+
+#booking_date_1i{
+  width: 100px;
+}
+
+input[type=date] {
+  background-color: red($color: #000000);
 }

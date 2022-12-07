@@ -20,6 +20,7 @@ $blue: #003DE5;
     background: $blue;
     color: white;
     font-weight: bolder ;
+    text-decoration: none;
   }
 }
 
@@ -42,6 +43,7 @@ $blue: #003DE5;
     background: white;
     color: $orange;
     font-weight: bolder ;
+    text-decoration: none;
   }
 }
 
@@ -50,6 +52,7 @@ $blue: #003DE5;
   // color: rgb(120, 99, 99);
   color: $blue;
   font-weight: bolder;
+  min-width: 200px;
 }
 
 .card-text {
@@ -75,7 +78,7 @@ $blue: #003DE5;
   // grid-column: 2/4;
   border-radius: 5px;
   grid-template-columns: repeat(3,1fr);
-  grid-gap: 16px;
+  grid-gap: 24px;
   flex-grow: 1;
 }
 
@@ -143,4 +146,10 @@ border-radius: 50%;
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+
+body{
+  background-image: url("bg-4.png");
+  background-size: cover;
+  background-position: center;
 }
