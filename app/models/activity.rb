@@ -3,7 +3,7 @@ class Activity < ApplicationRecord
   belongs_to :category
   has_many :bookings, dependent: :destroy
   has_many :likes, dependent: :destroy
-  validates :name, :location, :category, :description, :date, :price, presence: true
+  validates :name, :location, :category, :description, :price, presence: true
   has_many :reviews, through: :bookings
   has_many_attached :photos
 
