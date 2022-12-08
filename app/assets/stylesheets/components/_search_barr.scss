@@ -1,4 +1,27 @@
 .barr-search {
-  border-radius: 5px;
+  border-radius: 0.5px;
+  width: 800px;
 }
 
+.button-search {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $blue;
+  transition: background 0.4s center;
+  width: fit-content;
+  text-decoration: none;
+  border: none;
+  border-color: white;
+  margin-left: 3px;
+  font-weight: bolder ;
+
+
+
+  &:hover{
+    background: $orange;
+    color: white;
+    font-weight: bolder ;
+    text-decoration: none;
+  }
+}
