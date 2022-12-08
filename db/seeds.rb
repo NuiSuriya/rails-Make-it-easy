@@ -13,9 +13,9 @@ Booking.destroy_all
 Activity.destroy_all
 
 puts "Creating users..."
-User.create!(username: 'nico', email: 'nico@gmail.com', password: '123456')
-User.create!(username: 'nui', email: 'nui@gmail.com', password: '123456')
-User.create!(username: 'hakan', email: 'hakan@gmail.com', password: '123456')
+user1 = User.create!(username: 'nico', email: 'nico@gmail.com', password: '123456')
+user2 = User.create!(username: 'nui', email: 'nui@gmail.com', password: '123456')
+user3 = User.create!(username: 'hakan', email: 'hakan@gmail.com', password: '123456')
 
 puts "Creating categories..."
 
@@ -315,3 +315,76 @@ activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png"
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
 activity.save!
+
+file1 = URI.open("https://images.squarespace-cdn.com/content/v1/54da70f5e4b0ba12e9636912/51505f29-37da-4be0-912f-29b45d2bb382/Schermafbeelding+2022-10-12+om+13.27.49.png?format=1000w")
+file2 = URI.open("https://byhailey.nl/wp-content/uploads/2017/07/DSC08225.jpg")
+file3 = URI.open("https://images.sikkom.nl/sikkom/incoming/c7bqt4-vintooo.png/alternates/LANDSCAPE_1920/vintooo.png")
+activity = Activity.create!(
+  name: "Vintage sale - Kilosale Amsterdam",
+  user: User.all.sample,
+  category: hidden_gems,
+  location: "Havenstraat 3, 1075 XV Amsterdam",
+  description: 'Kilosale Amsterdam is a unique vintage outlet with second-hand fashion and clothing for a bargain price.
+  Hand-pick fashion for 15 euro/kilo.',
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
+)
+activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
+activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
+activity.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
+activity.save!
+
+puts "Creating bookings..."
+
+Booking.create!(
+  date: rand((DateTime.now - 1.months)..DateTime.now),
+  user: user1,
+  participant: rand(1..5),
+  activity: Activity.all.sample
+)
+
+Booking.create!(
+  date: rand((DateTime.now - 1.months)..(DateTime.now + 1.months)),
+  user: user1,
+  participant: rand(1..5),
+  activity: Activity.all.sample
+)
+
+3.times do
+  Booking.create!(
+    date: rand((DateTime.now - 1.months)..(DateTime.now + 1.months)),
+    user: user2,
+    participant: rand(1..5),
+    activity: Activity.all.sample
+  )
+end
+
+3.times do
+  Booking.create!(
+    date: rand((DateTime.now - 1.months)..(DateTime.now + 1.months)),
+    user: user3,
+    participant: rand(1..5),
+    activity: Activity.all.sample
+  )
+end
+
+# puts "Creating reviews..."
+
+# Review.create!(
+#   comment: "I enjoy this place a lot!",
+#   rating: 5,
+#   booking:
+# )
+
+# Review.create!(
+#   comment: "I had fun but it was too busy!",
+#   rating: 3,
+#   booking:
+# )
+
+# Review.create!(
+#   comment: "I came here many times and always love it!",
+#   rating: 5,
+#   booking:
+# )

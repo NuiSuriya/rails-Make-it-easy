@@ -3,6 +3,7 @@
   <div class="d-flex justify-content-lg-around">
     <div class="card shadow-sm p-3 me-2" style="width: 60%; height: 40%; padding: 25px; ">
 
+    <h2 class="card-title text-capitalize card-head"><%= @activity.name%></h2>
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
           <% if @activity.photos.attached? %>
@@ -33,10 +34,10 @@
       <div class="card-body mt-3">
         <%# <div class="card-description"> %>
 
-        <h5 class="card-title text-capitalize"><%= @activity.name%></h5>
-        <h6 class="card-text text-capitalize"> <%= @activity.location%></h6>
-        <h6 class="card-text text-capitalize"> <%= @activity.date.strftime("%d %b %Y")%></h6>
-        <h6 class="card-text text-capitalize"> <%= @activity.time.strftime("%H:00")%></h6>
+        <h6 class="card-text text-capitalize card-detail"> <strong>Venue:</strong> <%= @activity.location%></h6>
+        <h6 class="card-text text-capitalize card-detail"> <strong>Date:</strong> <%= @activity.date.strftime("%d %b %Y")%></h6>
+        <h6 class="card-text text-capitalize card-detail"> <strong>Time:</strong> <%= @activity.time.strftime("%H:00")%></h6>
+        <p class="mb-0"><strong>Description:</strong></p>
         <p class=""><%= @activity.description %></p>
         <%# </div> %>
       </div>
@@ -76,10 +77,12 @@
 
   </div>
 
-    <div class="card align-items-center mt-3", style="weight: 15%; height: 15%; padding: 25px;">
+    <div class="card align-items-center mt-3 shadow-sm", style="weight: 15%; height: 15%; padding: 25px;">
       <div class="review-title mb-2">
         <h3>What other travelers think about this!</h3>
       </div>
+
+
       <div class="card-header mb-3 p-3">
         <h4><%= pluralize @activity.reviews.size, "review" %></h4>
       </div>
@@ -90,14 +93,17 @@
               There's not reviews yet for <%= @activity.name %> realize your booking and
               be the first in leaving one.
             </blockquote>
+
           <% else %>
-            <blockquote class="blockquote mb-0 blockquote-style">
+            <blockquote class="blockquote mb-0 blockquote-style mt-2">
               <% @activity.reviews.each do |review| %>
                 <p><%= review.comment %></p>
                 <% review.rating.times do %>
                   <i class="fa-solid fa-star"></i>
                 <% end %>
                 <footer class="blockquote-footer mt-2"> A traveler wants to <cite title="Source Title">Make It Easier for you</cite></footer>
+                <div class="border-bottom"></div>
+                <br>
               <% end %>
             </blockquote>
           <% end %>
