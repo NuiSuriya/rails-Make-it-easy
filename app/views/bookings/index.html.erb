@@ -23,17 +23,20 @@
           <% end %>
           <div class="statistic">
             <h6>
-              <%= image_tag "orange_bag.png", class: "dashboard-icon" %><%= "You have #{dates.size} upcoming activities." %>
+              <%= image_tag "orange_bag.png", class: "dashboard-icon" %>
+              <%= "You have #{dates.size} upcoming activities." %>
             </h6>
           </div>
           <div class="statistic">
             <h6>
-              <%= image_tag "blue_bag.png", class: "dashboard-icon" %><%= "You already did #{@bookings.size - dates.size} activities." %>
+              <%= image_tag "blue_bag.png", class: "dashboard-icon" %>
+              <%= "You already did #{@bookings.size - dates.size} activities." %>
             </h6>
           </div>
           <div class="statistic mt-3">
             <h6>
-              <%= image_tag "orange_bag.png", class: "dashboard-icon" %><%= "You have #{@activities.size} activities in your map." %>
+              <%= image_tag "orange_bag.png", class: "dashboard-icon" %>
+              <%= "You have #{@activities.size} activities in your map." %>
             </h6>
           </div>
         </div>

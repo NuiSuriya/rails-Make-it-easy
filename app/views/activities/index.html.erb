@@ -1,14 +1,16 @@
 <div class="container">
-
+  <h1 class="title-game">Find a new place!</h1>
   <div class="row justify-content-center barr-search">
     <div class="d-flex justify-content-end align-items-start my-4">
-      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: activities_path, method: :get, class: "d-flex barr-search" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Looking for something else?"
         %>
-        <%= submit_tag "Search", class: "button" %>
+        <%= button_tag type:'submit', class: "button" do %>
+            <i class='fa-solid fa-magnifying-glass'></i>
+        <% end %>
       <% end %>
     </div>
 
@@ -46,12 +48,13 @@
               <% if current_user.likes.where(activity: activity).empty? %>
                 <%= simple_form_for [@activity, @like] do |f| %>
                   <%= f.button :button do %>
-                  <i class="fa-regular fa-heart"></i>
+                    <i class="like fa-regular fa-heart"></i>
                   <% end %>
                 <% end %>
-                <% else %>
-                  <%= link_to like_path(current_user.likes.where(activity: activity).first), data: {turbo_method: :delete} do %>
-                  <i class="fa-solid fa-heart"></i>
+
+              <% else %>
+                  <%= link_to like_path(current_user.likes.where(activity: activity).first), class:"like-decoration", data: {turbo_method: :delete} do %>
+                  <i class="like fa-solid fa-heart"></i>
                 <% end %>
               <% end %>
             <% end %>
