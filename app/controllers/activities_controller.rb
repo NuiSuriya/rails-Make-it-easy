@@ -55,7 +55,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_param
-    params.require(:activity).permit(:name, :description, :category_id, :location, :date, :time, :price, photos: [])
+    params.require(:activity).permit(:name, :description, :category_id, :location, :price, photos: [])
   end
 
   def set_date_and_time
