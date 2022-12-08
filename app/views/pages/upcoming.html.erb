@@ -6,9 +6,10 @@
           <img src="<%= cl_image_path date.activity.photos.first.key %>" class="d-block rounded-4" alt="..">
         </div>
         <div class="upcoming-activities-information">
-          <div class="upcoming-activities-name"><%= date.activity.name %></div>
-          <div class="upcoming-activities-date"><%= date.date %></div>
-          <div class="upcoming-activities-location"><%= date.activity.location %></div>
+          <div class="upcoming-activities-name ms-2 mb-1"><strong><%= date.activity.name %></strong></div>
+          <div class="upcoming-activities-date ms-2 mb-1"><strong>Date:</strong> <%= date.date.strftime("%d %b %Y") %></div>
+          <div class="upcoming-activities-date ms-2 mb-1"><strong>Time:</strong> <%= date.date.strftime("%H:00") %></div>
+          <div class="upcoming-activities-location ms-2 mb-1"><strong>Venue:</strong> <%= date.activity.location %></div>
         </div>
       </div>
       <div class="upcoming-activities-qrcode"><%= image_tag "QR_CODE.jpg", id:"QRcode2" %></div>
