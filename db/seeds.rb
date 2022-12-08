@@ -72,9 +72,9 @@ activity = Activity.create!(
   category: hidden_gems,
   location: 'Vondelpark 5, 1071 AA Amsterdam',
   description: 'Taproom ‘t Blauwe Theehuis is located in the middle of the Vondelpark. Enjoy the Amsterdam vibe on our sun-drenched terrace.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 0
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -90,9 +90,9 @@ activity = Activity.create!(
   category: hidden_gems,
   location: "1019 RX Amsterdam",
   description: "Java is one of the Indonesian islands that's gaining popularity for it's amazing volcanoes, fantastic temples and breathtaking landscapes.",
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -108,9 +108,9 @@ activity = Activity.create!(
   category: art_and_museums,
   location: "Linnaeusstraat 2, 1092 CK Amsterdam",
   description: 'The exhibition shows the different ways people around the world live with plastic. Global and local stories, objects from the museum’s collection, contemporary art and plastic icons are all linked to the global systems that introduced and spread the material.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -126,9 +126,9 @@ activity = Activity.create!(
   category: art_and_museums,
   location: "Museumplein 6, 1071 DJ Amsterdam",
   description: 'The Van Gogh Museum in Amsterdam houses the largest collection of artworks by Vincent van Gogh (1853-1890) in the world.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -144,9 +144,9 @@ activity = Activity.create!(
   category: sports,
   location: "Johan Cruijff Boulevard 1, 1100 DL Amsterdam",
   description: 'Amazing Event. The MUST thing to do.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -162,9 +162,9 @@ activity = Activity.create!(
   category: art_and_museums,
   location: "Elementenstraat 25, 1014 AR Amsterdam",
   description: '30 years in the making: Amaze is an immersive experience, a true audio-visual playground, in which the pioneers of Dutch dance combined their powers into the experience of a lifetime.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -180,9 +180,9 @@ activity = Activity.create!(
   category: food_and_drinks,
   location: "Nieuwezijds Voorburgwal 200, 1012 RR Amsterdam",
   description: "Dutch Herring is a popular food in Amsterdam — here's how to enjoy!",
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -198,9 +198,9 @@ activity = Activity.create!(
   category: food_and_drinks,
   location: "Funenkade 7, 1018 AL Amsterdam",
   description: "Get a taste of history at Poesiat & Kater, a brewery located in a historic location in Amsterdam-Oost with a tasting room that's just as charming.",
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -216,9 +216,9 @@ activity = Activity.create!(
   category: food_and_drinks,
   location: "1011 AB Amsterdam",
   description: "Amsterdam's free ferry system is an essential part of the city's transportation system.",
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -234,10 +234,11 @@ activity = Activity.create!(
   category: food_and_drinks,
   location: "Waterlooplein 2, 1011 NZ Amsterdam",
   description: 'If you are passionate about shopping, and especially vintage collectibles, then these 7 best flea markets in Europe will be a dream for you.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
+
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
@@ -252,9 +253,9 @@ activity = Activity.create!(
   category: food_and_drinks,
   location: "Hannie Dankbaarpassage 47, 1053 RT Amsterdam",
   description: 'An indoor food court - inspired by Torvehallerne in Copenhague, Mercado de San Miguel in Madrid and the Borough Market in London - that consists of a large hall with over 20 different stall restaurants.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -270,9 +271,9 @@ activity = Activity.create!(
   category: sports,
   location: "Eerste Constantijn Huygensstraat 88, 1054 BX Amsterdam",
   description: 'Rent a handbrake or footbrake bike and explore Amsterdam at your own pace!',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -288,9 +289,9 @@ activity = Activity.create!(
   category: events,
   location: "Hannie Dankbaarpassage 39, 1053 RT Amsterdam",
   description: 'The Maker Market is the perfect place to meet young, innovative makers and brands from all around the world, find locally produced and/or designed products and tokens of true craftsmanship.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
@@ -306,9 +307,9 @@ activity = Activity.create!(
   category: events,
   location: "Haarlemmerstraat 124-126, 1013 EX Amsterdam",
   description: 'Amazing Event. The MUST thing to do.',
-  date: Date.today,
-  time: Time.now + (3600*5),
-  price: 10
+  date: rand(DateTime.now..(DateTime.now + 1.months)),
+  time: Time.now + (3600 * rand(6..12)),
+  price: rand(5..30)
 )
 activity.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 activity.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")

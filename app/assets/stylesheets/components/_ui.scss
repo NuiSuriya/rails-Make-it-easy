@@ -141,11 +141,31 @@ border-radius: 50%;
   }
 }
 
-
 .activity-button {
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+
+.card-header{
+  background-color: whitesmoke !important;
+  // color: white;
+  border-radius: 5px !important;
+}
+
+// .blockquote-style{
+
+// }
+
+.card-review{
+  // border: solid whitesmoke;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-star{
+  color: $orange;
 }
 
 // body{
@@ -153,3 +173,4 @@ border-radius: 50%;
 //   background-size: cover;
 //   background-position: center;
 // }
+
