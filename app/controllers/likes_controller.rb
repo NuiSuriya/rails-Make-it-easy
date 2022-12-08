@@ -6,12 +6,13 @@ class LikesController < ApplicationController
     @like = Like.new
     @like.user = @user
     @like.activity = @activity
-    redirect_to activities_path if @like.save
+    @like.save
+    # redirect_to activities_path if @like.save
   end
 
   def destroy
     @like = Like.find(params[:id])
     @like.destroy
-    redirect_to activities_path
+    # redirect_to activities_path
   end
 end
