@@ -147,6 +147,14 @@ border-radius: 50%;
   right: 15px;
 }
 
+
+body{
+  background-image: url("Wallpaper9.png");
+  background-size: cover;
+
+  background-position: center;
+}
+
 .card-header{
   background-color: whitesmoke !important;
   // color: white;
@@ -167,10 +175,4 @@ border-radius: 50%;
 .fa-star{
   color: $orange;
 }
-
-// body{
-//   background-image: url("bg-4.png");
-//   background-size: cover;
-//   background-position: center;
-// }
 
