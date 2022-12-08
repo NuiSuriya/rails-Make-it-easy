@@ -33,12 +33,11 @@
 
       <div class="card-body mt-3">
         <%# <div class="card-description"> %>
-
-        <h6 class="card-text text-capitalize card-detail"> <strong>Venue:</strong> <%= @activity.location%></h6>
-        <h6 class="card-text text-capitalize card-detail"> <strong>Date:</strong> <%= @activity.date.strftime("%d %b %Y")%></h6>
-        <h6 class="card-text text-capitalize card-detail"> <strong>Time:</strong> <%= @activity.time.strftime("%H:00")%></h6>
-        <p class="mb-0"><strong>Description:</strong></p>
-        <p class=""><%= @activity.description %></p>
+          <h6 class="card-text text-capitalize card-detail"> <strong>Venue:</strong> <%= @activity.location%></h6>
+          <h6 class="card-text text-capitalize card-detail"> <strong>Date:</strong> <%= @activity.date.strftime("%d %b %Y")%></h6>
+          <h6 class="card-text text-capitalize card-detail"> <strong>Time:</strong> <%= @activity.time.strftime("%H:00")%></h6>
+          <p class="mb-0"><strong>Description:</strong></p>
+          <p class=""><%= @activity.description %></p>
         <%# </div> %>
       </div>
       <div class="d-flex justify-content-center align-items-center card-form mt-3", style="weight: 15%; height: 15%; padding: 25px;">

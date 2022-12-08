@@ -5,7 +5,11 @@
   <div class="my-page">
     <div class="dashboard-card mt-2 shadow">
       <div class="avatar-dashboard">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large shadow" %>
+      <% if current_user && current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar-large shadow"%>
+              <% else %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large shadow" %>
+              <% end %>
       </div>
       <div class="user-information">
         <div class="name"><h4><%= "Hello #{current_user.username.capitalize}!" %></h2></div>
@@ -23,17 +27,20 @@
           <% end %>
           <div class="statistic">
             <h6>
-              <%= image_tag "orange_bag.png", class: "dashboard-icon" %><%= "You have #{dates.size} upcoming activities." %>
+              <%= image_tag "orange_bag.png", class: "dashboard-icon" %>
+              <%= "You have #{dates.size} upcoming activities." %>
             </h6>
           </div>
           <div class="statistic">
             <h6>
-              <%= image_tag "blue_bag.png", class: "dashboard-icon" %><%= "You already did #{@bookings.size - dates.size} activities." %>
+              <%= image_tag "blue_bag.png", class: "dashboard-icon" %>
+              <%= "You already did #{@bookings.size - dates.size} activities." %>
             </h6>
           </div>
           <div class="statistic mt-3">
             <h6>
-              <%= image_tag "orange_bag.png", class: "dashboard-icon" %><%= "You have #{@activities.size} activities in your map." %>
+              <%= image_tag "orange_bag.png", class: "dashboard-icon" %>
+              <%= "You have #{@activities.size} activities in your map." %>
             </h6>
           </div>
         </div>

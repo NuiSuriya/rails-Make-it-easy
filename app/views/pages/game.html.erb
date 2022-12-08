@@ -14,6 +14,7 @@
           </div>
           <div class="flip-card-back card-game">
             <% random = @activities.sample %>
+
             <img class="card-img-top" style="height: 400, crop: :fill; padding: 5px; border-radius: 15px;"
               src="<%= cl_image_path random.photos.first.key %>" style="" alt="the-game-card">
             <div>
