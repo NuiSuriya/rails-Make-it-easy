@@ -118,9 +118,9 @@
     transition-duration: 0s;
     height: 260px;
     width: 530px;
-    img {
-      object-fit: cover;
-    }
+    // img {
+    //   object-fit: cover;
+    // }
   }
 
   .booking-image {
@@ -184,7 +184,7 @@ outline: 1px solid $orange;
 
 .liking-button {
   position: absolute;
-  right: 10px;
+  right: 45px;
   bottom: 10px;
 }
 
@@ -198,4 +198,11 @@ outline: 1px solid $orange;
     text-decoration: none;
     color: $blue;
   }
+}
+
+.hearth {
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
 }
