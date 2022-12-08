@@ -6,7 +6,10 @@
   text-decoration: none;
 }
 
-h1.title-game {
+.title-head {
   font-weight: bold;
-  font-family: noto;
+  color: $blue;
+  // font-weight: normal;
+  text-align: center;
+  font-family: Raleway !important;
 }

@@ -185,3 +185,13 @@ body{
   color: black ;
 }
 
+.review-title{
+  color: black;
+  font-family: Raleway;
+  font-size: 2rem;
+
+   &:hover{
+    color: $blue;
+    text-decoration: none;
+   }
+}
