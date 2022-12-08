@@ -13,9 +13,20 @@ Booking.destroy_all
 Activity.destroy_all
 
 puts "Creating users..."
-User.create!(username: 'nico', email: 'nico@gmail.com', password: '123456')
-User.create!(username: 'nui', email: 'nui@gmail.com', password: '123456')
-User.create!(username: 'hakan', email: 'hakan@gmail.com', password: '123456')
+file = URI.open("https://ca.slack-edge.com/T02NE0241-U045P1YLNCD-008daabb6c2b-512")
+user = User.create!(username: 'nico', email: 'nico@gmail.com', password: '123456')
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save!
+
+file = URI.open("https://ca.slack-edge.com/T02NE0241-U0466PUFE2U-b25ccc99b4dc-512")
+user = User.create!(username: 'nui', email: 'nui@gmail.com', password: '123456')
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save!
+
+file = URI.open("https://ca.slack-edge.com/T02NE0241-U0469RM2FR6-28fc561a6d84-512")
+user = User.create!(username: 'hakan', email: 'hakan@gmail.com', password: '123456')
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save!
 
 puts "Creating categories..."
 

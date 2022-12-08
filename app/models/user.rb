@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :my_map, through: :bookings, source: :activity
+  has_one_attached :photo
 
   has_many :likes, dependent: :destroy
 
