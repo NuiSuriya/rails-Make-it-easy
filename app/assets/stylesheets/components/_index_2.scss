@@ -8,8 +8,14 @@
 
 .title-head {
   font-weight: bold;
-  color: $blue;
+  color: whitesmoke;
+  font-size: 3em;
   // font-weight: normal;
   text-align: center;
   font-family: Raleway !important;
+  text-shadow: 0.5px 0.5px rgb(48, 48, 255);
+}
+
+h3.title-head {
+  font-size: 1.8em;
 }
