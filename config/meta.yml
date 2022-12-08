@@ -1,0 +1,5 @@
+meta_name: "Make it easy"
+meta_title: "Sparkle your journey"
+meta_description: "Let's explore a city and check the new activities we might have for you"
+meta_image: "home-screens.png" # should exist in `app/assets/images/`
+twitter_account: "@makeiteasy"   # required for Twitter Cards
