@@ -49,7 +49,7 @@
             <h2>Play&flip</h2>
           </div>
           <div class="flip-card-back card-game">
-            <% random = @activities.sample %>
+            <% random = Activity.find_by(name: 'Try local beer at a historic brewery ') %>
             <img class="card-img-top" style="height: 400, crop: :fill; padding: 5px; border-radius: 15px;"
               src="<%= cl_image_path random.photos.first.key %>" style="" alt="the-game-card">
             <h3 class="title-game"><%= random.name %></h3>

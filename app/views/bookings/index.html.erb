@@ -59,7 +59,7 @@
       <div id="carouselExampleCaptions" class="carousel slide bookings-cards" data-bs-ride="false">
         <div class="card-image carousel-inner shadow">
           <div class="carousel-item active">
-            <img src="https://tinypng.com/images/social/website.jpg" class="d-block w-100" alt="...">
+            <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iwcknWNa0.9c/v1/-1x-1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption background all-activities">
               <h5>All Your Activies</h5>
               <p><%= "You have #{@bookings.size} activities" %></p>
@@ -93,6 +93,7 @@
           <% @likes.each do |like| %>
           <div class="liking-card">
             <div class="like-photo" style="background-image: url('<%= cl_image_path like.activity.photos.first.key %>');">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" class="hearth" alt="...">
               <%= link_to "#{like.activity.name}", activity_path(like.activity), class: "button-2 liking-button" %>
             </div>
           </div>
