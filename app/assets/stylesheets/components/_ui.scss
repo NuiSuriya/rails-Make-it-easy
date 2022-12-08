@@ -148,3 +148,25 @@ border-radius: 50%;
   right: 15px;
 }
 
+.card-header{
+  background-color: whitesmoke !important;
+  // color: white;
+  border-radius: 5px !important;
+}
+
+// .blockquote-style{
+
+// }
+
+.card-review{
+  // border: solid whitesmoke;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-star{
+  color: $orange;
+}
+
+

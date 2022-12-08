@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div class="d-flex justify-content-lg-between">
-    <div class="card mb-5 shadow-sm" style="width: 57%; height: 40%; padding: 25px; ">
+  <div class="d-flex justify-content-lg-around">
+    <div class="card shadow-sm p-3 me-2" style="width: 60%; height: 40%; padding: 25px; ">
 
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -30,19 +30,41 @@
           </button>
       </div>
 
-      <div class="card-body" style="margin: 15px;">
+      <div class="card-body mt-3">
         <%# <div class="card-description"> %>
 
         <h5 class="card-title text-capitalize"><%= @activity.name%></h5>
         <h6 class="card-text text-capitalize"> <%= @activity.location%></h6>
         <h6 class="card-text text-capitalize"> <%= @activity.date.strftime("%d %b %Y")%></h6>
-        <h6 class="card-text text-capitalize"> <%= @activity.date.strftime("%H:00")%></h6>
+        <h6 class="card-text text-capitalize"> <%= @activity.time.strftime("%H:00")%></h6>
         <p class=""><%= @activity.description %></p>
         <%# </div> %>
       </div>
+      <div class="d-flex justify-content-center align-items-center card-form mt-3", style="weight: 15%; height: 15%; padding: 25px;">
+
+      <%= simple_form_for [@activity, @booking] do |f|%>
+
+        <div class="w-30">
+          <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",label: false, input_html: {class: "box ms-1"} %>
+        </div>
+
+        <div class="d-flex py-3">
+          <%= f.date_select :date, ignore_time: true, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
+          <%= f.time_select :date, ignore_date: true, html5: true %>
+        </div>
+
+        <div class="mt-2">
+          <%= f.submit "Book now!", class: "button" %>
+          <%#= link_to "Back", activities_path, class: "button-2", style:"margin-bttom: 10px; border-radius: 25px;" %>
+        </div>
+      <% end %>
     </div>
+
+
+    </div>
+
       <%# <div class= "map col-sm-4"> %>
-      <div style="width: 40%; height: 100vh; position: sticky; top: 0;"
+      <div class="ms-3" style="width: 40%; height: 100vh; position: sticky; top: 0;"
         data-controller="map"
         data-map-markers-value="<%= @marker.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -51,44 +73,31 @@
   </div>
                                     <%# <%= link_to "Book now!", new_activity_booking_path(@activity), class:"button"  %>
   <div class="">
-    <div class="d-flex justify-content-center align-items-center card-form mt-4", style="weight: 15%; height: 15%; padding: 25px;">
 
-      <%= simple_form_for [@activity, @booking] do |f|%>
-
-          <div class="w-30">
-            <%= f.input :participant, collection: (1..5).to_a, prompt: "Participants",
-            label: false, input_html: {class: "box ms-1"} %>
-          </div>
-
-        <div class="d-flex py-3">
-          <%= f.date_select :date, ignore_time: true, as: :date, html5: true, label: false, input_html: {class: "pb-0"} %>
-          <%= f.time_select :date, ignore_date: true, html5: true %>
-        </div>
-        <div class="mt-2">
-          <%= f.submit "Book now!", class: "button" %>
-          <%#= link_to "Back", activities_path, class: "button-2", style:"margin-bttom: 10px; border-radius: 25px;" %>
-        </div>
-      <% end %>
-        </div>
-    </div>
+  </div>
 
     <div class="card align-items-center mt-3", style="weight: 15%; height: 15%; padding: 25px;">
-      <div class="card-header">
+      <div class="review-title mb-2">
+        <h3>What other travelers think about this!</h3>
+      </div>
+      <div class="card-header mb-3 p-3">
         <h4><%= pluralize @activity.reviews.size, "review" %></h4>
       </div>
 
-      <div class="card-body">
+      <div class="card-review p-3">
           <% if @activity.reviews.blank? %>
-            <blockquote class="blockquote mb-0">
-
+            <blockquote class="blockquote mb-0 blockquote-style">
               There's not reviews yet for <%= @activity.name %> realize your booking and
               be the first in leaving one.
             </blockquote>
           <% else %>
-            <blockquote class="blockquote mb-0">
+            <blockquote class="blockquote mb-0 blockquote-style">
               <% @activity.reviews.each do |review| %>
                 <p><%= review.comment %></p>
-                <footer class="blockquote-footer">A traveler wants to <cite title="Source Title">Make it easier for you</cite></footer>
+                <% review.rating.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+                <footer class="blockquote-footer mt-2"> A traveler wants to <cite title="Source Title">Make It Easier for you</cite></footer>
               <% end %>
             </blockquote>
           <% end %>

@@ -3,15 +3,15 @@
 <div class="container">
 
   <div class="my-page">
-    <div class="dashboard-card shadow">
+    <div class="dashboard-card mt-2 shadow">
       <div class="avatar-dashboard">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large shadow" %>
       </div>
       <div class="user-information">
         <div class="name"><h4><%= "Hello #{current_user.username.capitalize}!" %></h2></div>
         <div class="dashboard-tow-buttons">
-          <button type="button" class="btn button dasboard-button"><%= link_to "New Activity", new_activity_path  %></button>
-          <button type="button" class="btn button dasboard-button"><%= link_to "Upcoming Activities", upcoming_path  %></button>
+        <%= link_to "New Activity", new_activity_path, class: "button"  %>
+        <%= link_to "Upcoming", upcoming_path,  class: "button"  %>
         </div>
 
         <div class="statistics">
@@ -48,7 +48,7 @@
 
     </div>
 
-    <div class="tester">
+    <div class="tester mt-2">
       <div id="carouselExampleCaptions" class="carousel slide bookings-cards" data-bs-ride="false">
         <div class="card-image carousel-inner shadow">
           <div class="carousel-item active">
@@ -81,7 +81,7 @@
       </div>
 
 
-      <div class="likings-cards shadow">
+      <div class="likings-cards shadow mt-2">
         <div class="d-flex">
           <% @likes.each do |like| %>
           <div class="liking-card">
