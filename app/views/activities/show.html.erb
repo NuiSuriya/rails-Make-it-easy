@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="d-flex justify-content-lg-around">
-    <div class="card shadow-sm p-3 me-2" style="width: 60%; height: 40%; padding: 25px; ">
+    <div class="card mt-4 shadow-sm p-3 me-2" style="width: 60%; height: 40%; padding: 25px; ">
 
     <h2 class="card-title text-capitalize card-head"><%= @activity.name%></h2>
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -54,7 +54,7 @@
         </div>
 
         <div class="mt-2">
-          <%= f.submit "Book now!", class: "button" %>
+          <%= f.submit "Book now!", class: "button w-100" %>
           <%#= link_to "Back", activities_path, class: "button-2", style:"margin-bttom: 10px; border-radius: 25px;" %>
         </div>
       <% end %>
@@ -64,7 +64,7 @@
     </div>
 
       <%# <div class= "map col-sm-4"> %>
-      <div class="ms-3" style="width: 40%; height: 100vh; position: sticky; top: 0;"
+      <div class="ms-3 mt-4" style="width: 40%; height: 100vh; position: sticky; top: 0;"
         data-controller="map"
         data-map-markers-value="<%= @marker.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
