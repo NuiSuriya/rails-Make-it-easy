@@ -1,5 +1,5 @@
 
-<div class="container d-flex justify-content-between">
+<div class="container d-flex justify-content-center align-items-center py-5">
   <div class="card confirm-card w-50">
 
     <div class="confirm-title">
@@ -21,11 +21,11 @@
 
   </div>
    <%# </div> %>
-<%# </div> %>
+  <%# </div> %>
 
-<%# <div class= "container"> %>
+  <%# <div class= "container"> %>
   <div class="w-50 p-3 form">
-    <h1><strong>Share your experince here...</strong></h1>
+    <h3><strong>Share your experience</strong></h3>
 
     <%= simple_form_for([@booking, @review]) do |f| %>
       <%= f.input :comment %>
